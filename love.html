@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Our Story</title>
+<link rel="stylesheet" href="style.css">
+
+<style>
+
+/* PAGE BACKGROUND */
+body.love{
+    background: linear-gradient(180deg,#1a001f,#3b003b,#000);
+    color:white;
+    font-family: 'Georgia', serif;
+    margin:0;
+    overflow-x:hidden;
+}
+
+/* FADE IN PAGE */
+.fade-in{
+    animation: fade 2s ease-in;
+}
+
+@keyframes fade{
+    from{opacity:0;}
+    to{opacity:1;}
+}
+
+/* LETTER BOX */
+.letter-box{
+    text-align:center;
+    padding:60px 20px;
+}
+
+.letter-box h1{
+    font-size:2.8rem;
+    margin-bottom:20px;
+    color:#ffd6f6;
+}
+
+.letter-box p{
+    max-width:700px;
+    margin:auto;
+    font-size:1.2rem;
+    line-height:1.7;
+}
+
+/* MEDIA SECTION */
+.media-section{
+    text-align:center;
+    padding:40px 20px;
+}
+
+.media-section h2{
+    margin-bottom:20px;
+    font-weight:normal;
+    color:#ffb6f9;
+}
+
+/* GALLERY */
+.gallery{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:30px;
+    margin-top:20px;
+}
+
+/* SAME STYLE FOR IMAGES + VIDEO */
+.gallery img,
+.gallery video{
+    width:280px;
+    height:380px;
+    object-fit:cover;
+    border-radius:25px;
+    box-shadow:0 0 25px rgba(255,150,200,0.5);
+    transition:0.4s ease;
+    animation: glow 4s infinite alternate;
+}
+
+/* HOVER EFFECT */
+.gallery img:hover,
+.gallery video:hover{
+    transform:scale(1.05);
+}
+
+/* GLOW ANIMATION */
+@keyframes glow{
+    from{ box-shadow:0 0 20px rgba(255,150,200,0.4);}
+    to{ box-shadow:0 0 35px rgba(255,150,200,0.8);}
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width:600px){
+
+.gallery img,
+.gallery video{
+    width:90%;
+    height:auto;
+}
+
+}
+
+/* ROSE BACKGROUND DECOR */
+.roses{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    pointer-events:none;
+    background-image:url('https://i.pinimg.com/originals/4d/3c/cc/4d3ccc35f4f3e7f5b343ec660f24e4fc.png');
+    opacity:0.05;
+}
+
+</style>
+
+</head>
+
+<body class="love fade-in">
+
+<!-- LOVE MESSAGE -->
+<div class="letter-box">
+
+<h1>For You, Nimoh ❤️</h1>
+
+<p id="typingText"></p>
+
+</div>
+
+<!-- MEMORIES -->
+<div class="media-section">
+
+<h2>Moments With You</h2>
+
+<div class="gallery">
+
+<img src="photo1.jpg" alt="Memory 1">
+<img src="photo2.jpg" alt="Memory 2">
+<img src="photo3.jpg" alt="Memory 3">
+
+<video controls>
+    <source src="video.mp4" type="video/mp4">
+</video>
+
+</div>
+
+</div>
+
+<div class="roses"></div>
+
+<!-- MUSIC -->
+<audio id="music" src="how-you-feel.mp3" autoplay loop></audio>
+
+<!-- TYPING LOVE MESSAGE -->
+<script>
+
+const text = `Being with you has been one of the most beautiful journeys of my life. 
+Watching you grow, smile, and chase your dreams makes me proud every day. 
+You make my world softer, brighter, and warmer. 
+I will always support you, believe in you, and stand beside you, Nimoh. ❤️`;
+
+let index = 0;
+const speed = 40;
+
+function typeText(){
+    if(index < text.length){
+        document.getElementById("typingText").innerHTML += text.charAt(index);
+        index++;
+        setTimeout(typeText, speed);
+    }
+}
+
+typeText();
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For My Love Nimo</title>
+
+
+<style>
+
+body {
+    margin: 0;
+    font-family: 'Georgia', serif;
+    background: black;
+    color: white;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+/* SECTION STYLING */
+.section {
+    height: 100vh;
+    display: none;
+    padding: 40px;
+}
+
+.active {
+    display: block;
+}
+
+/* Romantic background */
+#page1 {
+    background: linear-gradient(to bottom, black, #1a001a);
+}
+
+#page2 {
+    background: linear-gradient(to bottom, #0d0d0d, #330033);
+}
+
+/* Buttons */
+button {
+    padding: 15px 30px;
+    font-size: 18px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    margin-top: 20px;
+    background: pink;
+    color: black;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.1);
+}
+
+/* Image gallery */
+.gallery img {
+    width: 250px;
+    border-radius: 20px;
+    margin: 15px;
+    box-shadow: 0 0 20px pink;
+}
+
+/* Video styling */
+video {
+    width: 70%;
+    border-radius: 20px;
+    margin-top: 20px;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- MUSIC -->
+<audio id="bgMusic" loop autoplay>
+    <source src="audio/WhatsApp Audio 2026-02-03 at 3.02.15 PM.mpeg" type="audio/mp3">
+</audio>
+
+
+<!-- PAGE 1 -->
+<section id="page1" class="section active">
+
+<h1>Hi Nimo ❤️</h1>
+
+<p>
+From the moment you walked into my life, things felt different...
+</p>
+
+<button onclick="goToPage2()">Next</button>
+
+</section>
+
+
+<!-- PAGE 2 -->
+<section id="page2" class="section">
+
+<h1>Our Story</h1>
+
+<p>
+Being with you has been one of the most beautiful journeys of my life.
+Watching you grow, smile, and chase your dreams makes me proud every day.
+You make my world softer, brighter, and warmer.
+</p>
+
+<div class="gallery">
+    <img src="photos/WhatsApp Image 2026-02-03 at 3.03.38 PM.jpeg">
+    <img src="photos/WhatsApp Image 2026-02-03 at 3.03.39 PM.jpeg">
+</div>
+
+<video controls>
+    <source src="videos/WhatsApp Video 2026-02-03 at 3.09.09 PM.mp4" type="video/mp4">
+</video>
+
+</section>
+
+
+<script>
+
+function goToPage2() {
+
+    document.getElementById("page1").classList.remove("active");
+    document.getElementById("page2").classList.add("active");
+
+}
+
+</script>
+
+</body>
+</html>
+<script>
+document.body.addEventListener("click", () => {
+    document.getElementById("bgMusic").play();
+});
+</script>
